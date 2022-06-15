@@ -8,6 +8,7 @@ const AddCategory = () => {
     const [refresh, setRefresh] = useState(true)  
     useEffect(() => {
         getCategories();
+        console.log("github test");
     }, [refresh])
 
 
