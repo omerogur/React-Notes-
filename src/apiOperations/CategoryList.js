@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 const CategoryList = () => {
     const [data, setData] = useState([])
+    
     useEffect(() => {
         fetch('https://northwind.vercel.app/api/categories')
             .then(response => response.json())
