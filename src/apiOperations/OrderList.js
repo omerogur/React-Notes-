@@ -7,20 +7,25 @@ const OrderList = () => {
     const [staticData, setStaticData] = useState([])
     const [count, setCount] = useState(0)
     useEffect(() => {
-        fetch('https://northwind.vercel.app/api/orders')
-            .then(response => response.json())
-            .then(d => 
-                {setData(d) 
-                setStaticData(d)});
-
-                console.log("useeffect")
-
+         getAPI()
     }, [])
+
+    const getAPI = () => {
+        fetch('https://northwind.vercel.app/api/orders')
+        .then(response => response.json())
+        .then(d => 
+            {setData(d) 
+            setStaticData(d)});
+
+            console.log("useeffect")
+
+    }
+
 
     const getData = () => {
         setData(staticData.slice(0,count))
 
-        console.log(2);
+      
     }
 
     return (
@@ -36,13 +41,13 @@ const OrderList = () => {
                     <th>ShipName</th>
                     <th>City</th>
                 </tr>
-                {data.map((item, key) => {
-                    return <tr key={key}>
+                {data.map((item, key) => 
+                     <tr key={key}>
                         <td>{item.customerId}</td>
                         <td>{item.shipName}</td>
                         <td>{item.shipAddress.city}</td>
                     </tr>
-                })}
+                )}
             </table>
 
         </div>

@@ -8,7 +8,6 @@ const AddCategory = () => {
     const [refresh, setRefresh] = useState(true)  
     useEffect(() => {
         getCategories();
-        console.log("github test");
     }, [refresh])
 
 
@@ -62,7 +61,7 @@ const AddCategory = () => {
         <div>
             <div>
                 <label >Name:</label>
-                <input type="text" onChange={(e) => setCategory(prev => { return { ...prev, name: e.target.value } })} />
+                <input type="text" onChange={(e) => setCategory(prev => ({...prev,name:e.target.value}))} />
             </div>
             <div>
                 <label >Description:</label>
