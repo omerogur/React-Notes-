@@ -10,7 +10,7 @@ import TodoApp from './stateSample/TodoApp';
 function App() {
   return (
     <div >
-        <AddCategory />
+        <CategoryPage />
     </div>
   );
 }
