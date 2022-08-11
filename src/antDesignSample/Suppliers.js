@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { baseService } from '../network/services/baseServices'
-import { Button, Table,Modal } from 'antd'
+import { Button, Table,Modal,Image } from 'antd'
 const Suppliers = () => {
     const [data,setData] = useState([])
     const [refresh,setRefresh] = useState(true)
@@ -17,6 +17,15 @@ const Suppliers = () => {
   }
   const columns = [
     {
+        title: 'Person',
+        dataIndex: 'id',
+        key: 'id',
+        render: id => ( <Image
+            width={100}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />)
+      },
+    {
       title: 'CompanyName',
       dataIndex: 'companyName',
       key: 'companyName',
@@ -28,8 +37,9 @@ const Suppliers = () => {
     },
     {
       title: 'Country',
-      dataIndex: 'address.country',
+      dataIndex: 'address',
       key: 'address.country',
+      render : item => Object.values(item)[4]
     },
     {
         title: 'Delete',
@@ -37,6 +47,7 @@ const Suppliers = () => {
         key: 'id',
         render: id => (<Button type="primary" danger onClick={() => handleClick(id)}>Delete</Button>)
       },
+      
   ];
   const handleClick = (id) => {
    setDeleteId(id)
