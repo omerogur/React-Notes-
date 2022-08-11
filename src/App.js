@@ -1,3 +1,4 @@
+import Suppliers from './antDesignSample/Suppliers';
 import AddCategory from './apiOperations/AddCategory';
 import CategoryList from './apiOperations/CategoryList';
 import OrderList from './apiOperations/OrderList';
@@ -11,14 +12,14 @@ import CategoryPage from './serviceSample/CategoryPage';
 import StateSample7 from './stateSample/StateSample7';
 import StateSample8 from './stateSample/StateSample8';
 import TodoApp from './stateSample/TodoApp';
-
+import 'antd/dist/antd.css';
 function App() {
   return (
         
         
         <TodoProvider>
 
-        <TodoMain />
+        <Suppliers />
         </TodoProvider>
         
        
